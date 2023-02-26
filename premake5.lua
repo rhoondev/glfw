@@ -1,6 +1,7 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -24,10 +25,8 @@ project "GLFW"
 		"src/internal.h"
 	}
 	filter "system:linux"
-		pic "On"
-
+		pic "on"
 		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
@@ -50,7 +49,6 @@ project "GLFW"
 
 	filter "system:windows"
 		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
